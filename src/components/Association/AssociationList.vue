@@ -13,7 +13,7 @@
 				<el-table-column prop="name" label="社长" width="120"></el-table-column>
 				<el-table-column prop="describe" label="社团介绍" width="120"></el-table-column>
 				<el-table-column prop="asLmage" label="图片" width="120"></el-table-column>
-				<el-table-column prop="asLabel" label="标签" width="120"></el-table-column>
+				<el-table-column prop="labelName" label="标签" width="120"></el-table-column>
 				<el-table-column prop="exaStateName" label="审核状态" width="120"></el-table-column>
 				<el-table-column label="操作" width="180">
 				  <template slot-scope="scope">
@@ -31,7 +31,7 @@
 		  :current-page="currentPage"
 		  :page-sizes="pagesizes"
 		  :page-size="pageSize"
-		  layout="total, sizes, prev, pager, next, jumper"
+			layout="total, sizes, prev, pager, next, jumper"
 		  :total="lists.length" background>
 		</el-pagination>
 		<!-- end -->

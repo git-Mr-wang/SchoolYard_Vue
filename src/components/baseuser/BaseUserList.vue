@@ -122,7 +122,6 @@
 				}).then(res=>{
 					this.$message("删除成功");
 					this.search();
-					// this.reload();
 			    })
 			},
 			add(){
