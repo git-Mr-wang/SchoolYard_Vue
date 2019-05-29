@@ -65,7 +65,7 @@
 				userName:'',
 				password:'',
 				name:'',
-				userSex:'',
+				userSex:'1',
 				userAge:'',
 				email:'',
 				telno:'',

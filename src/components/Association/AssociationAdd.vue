@@ -22,7 +22,36 @@
 		  <el-col :span="12"> <el-input style='width:300px;margin-top: 20px;' placeholder='请输入社团介绍' v-model='describe'></el-input> </el-col>
 		</el-row>
 		<el-row>
-		  <el-col :span="12"> <el-input style='width:300px;margin-top: 20px;' placeholder='请输入图片' v-model='asLmage'></el-input> </el-col>
+		  <el-col :span="12">
+<!-- 			<el-upload style='margin: 20px 0 0 115px;' 
+			  v-model='asLmage'
+			  class="upload-demo"
+			  action=""
+			  :on-preview="handlePreview"
+			  :on-remove="handleRemove"
+			  :auto-upload="false"
+			  :multiple="false"
+			  list-type="picture">
+			  <el-button slot="trigger" size="small" type="primary">请选取图片</el-button>
+			  <el-button style="margin-left: 10px;" size="small" type="success" @click="submitUpload">上传到服务器</el-button>
+			  <! <span slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</span> -->
+			<!-- </el-upload> -->
+			<el-upload v-model='asLmage'
+			  class="upload-demo"
+			  ref="upload"
+			  :action="doUpload"
+			  :on-preview="handlePreview"
+			  :on-remove="handleRemove"
+			  :file-list="fileList"
+			  :auto-upload="false"
+			  :limit="1"
+			   list-type="picture"
+			  >
+			  <el-button slot="trigger" size="small" type="primary">请选取图片</el-button>
+			  <el-button style="margin-left: 10px;" size="small" type="success" @click="submitUpload">上传到服务器</el-button>
+			</el-upload>
+		  <!-- <el-input style='width:300px;margin-top: 20px;' placeholder='请输入图片' v-model='asLmage'></el-input> -->
+		  </el-col>
 		</el-row>
 		<el-row>
 		  <el-col :span="12"> 
@@ -62,6 +91,8 @@
 		name:'',
 		data() {
 			return {
+				doUpload:'http://localhost/wang/upload/upload',
+				fileList:[],
 				asName:'',
 				userId:1,
 				describe:'',
@@ -86,6 +117,18 @@
 			};
 		},
 		methods:{
+			 handleRemove(file, fileList) {
+				 alert(file, fileList);
+				// console.log(file, fileList);
+			  },
+			  handlePreview(file) {
+				  alert(file);
+				// console.log(file);
+			  },
+            submitUpload() {
+				this.$refs.upload.submit();
+				// alert(this.name);
+			  },
 			saveAdd(){
 				// 后端网址
 				var url = this.baseUrl+"/association/insert"
@@ -129,6 +172,12 @@
 </script>
 
 <style>
-
+	.el-upload-list{
+		margin-left: 240px;
+		width: 450px;
+	}
+	.upload-demo{
+		margin: 20px 0 0 -90px;
+	}
 </style>
 

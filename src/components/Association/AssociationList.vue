@@ -16,13 +16,17 @@
 				<el-table-column prop="labelName" label="标签" width="120"></el-table-column>
 				<el-table-column prop="exaStateName" label="审核状态" width="120"></el-table-column>
 				<el-table-column label="操作" width="180">
+					
 				  <template slot-scope="scope">
 					<el-button size="mini" @click="update(scope.row.asId)">编辑</el-button>
 					<el-button size="mini" type='danger' @click="del(scope.row.asId)">删除</el-button>
 				  </template>
 				</el-table-column>
 			</el-table>
+			<!-- <img src="172.25.20.119/codeout/55.jpg" /> -->
+			<!-- <img src="../../assets/B6BF74C868E05DBEF149E6B1E23E7377.jpeg"> -->
 		</center>
+		
 		
 		<!-- 分页 begin -->
 		<el-pagination
@@ -140,16 +144,6 @@
 					this.lists = res.data;
 					// console.log(this.list)
 				})
-				
-// 				var url = this.baseUrl+"/baseUser/list"
-// 					this.$axios.post(url,this.$qs.stringify(),{
-// 						headers: {
-// 							'Content-Type':'application/x-www-form-urlencoded; charset=UTF-8'
-// 						}
-// 					}).then(res=>{
-// 						this.listss = res.data;
-// 						// console.log(this.list)
-// 					})
 			}
 		},
 		mounted:function(){

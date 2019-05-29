@@ -12,6 +12,8 @@
 				<br />
 				<span class="sp">校&nbsp;&nbsp;&nbsp;园&nbsp;&nbsp;&nbsp;通</span>
 				<el-button @click='ads()' style="margin-right: -500px; margin-left: 500px;" class="eb">打开侧边栏</el-button>
+				<!-- <img src="http://localhost:8083/admin.jpg" /> -->
+
 			</el-header>
 			<hr />
 			<!-- 右边 -->

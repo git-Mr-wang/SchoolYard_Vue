@@ -1,7 +1,7 @@
 <template>
 	<div class="dv">
 		<h1 style="text-align: center"></h1>
-		<div style="margin: 0px 80px 70px -800px;">
+		<div style="margin: -30px 80px 70px -660px;">
 			<el-input style='width:160px' placeholder='账号' v-model='search_userName'></el-input>
 			<el-button @click='search'>查询</el-button>
 			<el-button @click='add'>添加</el-button>
@@ -17,7 +17,7 @@
 				<el-table-column prop="userAge" label="年龄" width="100"></el-table-column>
 				<el-table-column prop="email" label="邮箱" width="140"></el-table-column>
 				<el-table-column prop="telno" label="电话" width="140"></el-table-column>
-				<el-table-column prop="statusName" label="身份id 1——9" width="140"></el-table-column>
+				<el-table-column prop="statusName" label="身份级别 width="140"></el-table-column>
 				<el-table-column label="操作" width="200">
 				  <template slot-scope="scope" class="tl">
 					<el-button size="mini" @click="update(scope.row.userId)">编辑</el-button>
